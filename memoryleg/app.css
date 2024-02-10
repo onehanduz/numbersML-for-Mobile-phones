@@ -1,0 +1,40 @@
+.numbersMemo {
+  background-color: white;
+  border-radius: 3px;
+  font-size: 90%;
+  padding: 0.2em;
+  position: absolute;
+  width: 9em;
+  text-align: center;
+  color: 0;
+}
+.eventContainer {
+  background-color: gray;
+  background: linear-gradient(to bottom, #999, #888);
+  border: 1px solid black;
+  height: 100%;
+  line-height: 1.6286;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.numbersMemoMid {
+  font-size: 500%;
+  top: 40%;
+}
+.memoReturn {
+  left: 25%;
+  bottom: 10em;
+  position: absolute;
+}
+.memoPrev {
+  left: 40%;
+  bottom: 10em;
+  position: absolute;
+}
+.memoNext {
+  left: 55%;
+  bottom: 10em;
+  position: absolute;
+}

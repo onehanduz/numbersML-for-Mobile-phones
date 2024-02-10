@@ -1,0 +1,257 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css" />
+  <link rel="stylesheet" type="text/css" href="app.css" />
+</head>
+<body>
+  <div id="numSettings" class="ui container">
+    <div>
+      <h4
+        style="
+          margin-top: 1em;
+          margin-bottom: 1em;
+          font-size: 4em;
+          text-align: center;
+        "
+        class="ui huge header"
+      >
+        Numbers
+      </h4>
+    </div>
+    <!-- SETTINGSs -->
+    <div>
+      <form
+        id="numSettings_form"
+        class="ui form container"
+        style="font-size: 3em"
+      >
+        <div class="huge field">
+          <div class="two fields">
+            <div class="huge field">
+              <label>Numbers system</label>
+              <select name="numberSystem" class="ui hugedropdown">
+                <option value="2">Two digit</option>
+                <option value="3">Three digit</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Image per locus</label>
+              <select name="image" class="ui hugedropdown">
+                <option value="1">One image</option>
+                <option value="2">Two image</option>
+                <option value="3">Three image</option>
+              </select>
+            </div>
+          </div>
+          <div class="three fields">
+            <div class="field">
+              <label>Amount</label>
+              <input name="amount" type="number" placeholder="100" />
+            </div>
+            <div class="field">
+              <label>Min</label>
+              <input name="minValue" type="number" placeholder="00" />
+            </div>
+            <div class="field">
+              <label>Max</label>
+              <input name="maxValue" type="number" placeholder="100" />
+            </div>
+          </div>
+          <label class="ui dividing header">Unrepeatable</label>
+          <div class="three fields">
+            <div class="field">
+              <label>1-image</label>
+              <select name="unrepeatable1" class="ui hugedropdown">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>2-image</label>
+              <select name="unrepeatable2" class="ui hugedropdown">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>3-image</label>
+              <select name="unrepeatable3" class="ui hugedropdown">
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>AutoAdvance in ms</label>
+            <div class="ui input focus">
+              <input
+                name="autoAdvanced"
+                type="number"
+                placeholder="default off"
+              />
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center">
+          <button
+            type="submit"
+            style="font-size: 1em"
+            class="ui primary huge button"
+          >
+            Start
+          </button>
+        </div>
+      </form>
+      <div>
+        <h2>
+          Talab va kamchiliklar bo'lsa github.com/onehanduz yoki t.me/onehand_1
+          ga murojaat qiling!
+        </h2>
+      </div>
+    </div>
+    <!-- NUMBERS -->
+  </div>
+  <div id="numMemo" style="display: none" class="ui eventContainer">
+    <div style="margin-top: 1em">
+      <button id="memoEnd" style="font-size: 2em" class="ui icon button">
+        END
+      </button>
+      <span id="timeStart" style="font-size: 2em">12:00</span>
+    </div>
+    <div
+      style="font-size: 12em"
+      id="memoMidNum"
+      class="numbersMemo numbersMemoMid"
+    >
+      Start
+    </div>
+    <div>
+      <button
+        class="ui primary icon huge button memoReturn"
+        onclick="memoReturn()"
+      >
+        <i
+          style="font-size: 4em; padding-top: 25"
+          class="fast backward icon"
+          aria-hidden="true"
+        ></i>
+      </button>
+      <button class="ui primary icon huge button memoPrev" onclick="memoPrev()">
+        <i
+          style="font-size: 4em; padding-top: 25"
+          class="horizontally flipped play icon"
+        ></i>
+      </button>
+      <button class="ui primary icon huge button memoNext" onclick="memoNext()">
+        <i style="font-size: 4em; padding-top: 25" class="play icon"></i>
+      </button>
+    </div>
+  </div>
+  <div id="numResult" style="display: none" class="ui container">
+    <font size="9">
+      <div style="display: flex; justify-content: center">
+        <button
+          id="resultEnd"
+          style="font-size: 0.8em; margin-top: 0.5em"
+          class="ui primary icon button"
+        >
+          Return
+        </button>
+        <button
+          id="resultSort"
+          style="font-size: 0.8em; margin-top: 0.5em"
+          class="ui primary icon button"
+        >
+          Sort
+        </button>
+      </div>
+      <table class="ui table">
+        <thead>
+          <tr>
+            <th class="ten wide">Params</th>
+            <th class="six wide">Results</th>
+          </tr>
+          <tr>
+            <td>Amount:</td>
+            <td id="amountofres"></td>
+          </tr>
+          <tr>
+            <td>Spent:</td>
+            <td id="timeofres"></td>
+          </tr>
+          <tr>
+            <td>Avarage:</td>
+            <td id="timeofavarage"></td>
+          </tr>
+          <tr>
+            <th class="ten wide">Numbers</th>
+            <th class="six wide">Time</th>
+          </tr>
+        </thead>
+        <tbody id="memoResults">
+          <tr>
+            <td>00</td>
+            <td>00:00.00</td>
+          </tr>
+          <tr>
+            <td>00</td>
+            <td>00:00.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </font>
+  </div>
+  <script src="./semantic/semantic.min.js"></script>
+  <script src="numbers.js"></script>
+  <script src="result.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document
+      .getElementById("numSettings_form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        document.getElementById("numSettings").style.display = "none";
+        document.getElementById("numMemo").style.display = "flex";
+        var numSettings = getData(e.target);
+        generateNums(numSettings);
+        memoNext();
+        start();
+        if (numSettings.autoAdvanced != false) {
+          interval = setInterval(memoNext, numSettings.autoAdvanced);
+        }
+      });
+    document.getElementById("memoEnd").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("numSettings").style.display = "none";
+      document.getElementById("numMemo").style.display = "none";
+      document.getElementById("numResult").style.display = "block";
+      pause();
+      endTime = Date.now();
+      resultTime[resultTime.length - 1].stop = Date.now();
+      resultarr = calculateResults(resultTime);
+      printHead(resultarr);
+      printResult(resultarr);
+      clearInterval(interval);
+    });
+    document
+      .getElementById("resultEnd")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById("numSettings").style.display = "block";
+        document.getElementById("numMemo").style.display = "none";
+        document.getElementById("numResult").style.display = "none";
+        resultTime = [];
+        memoNums = ["START"];
+        startTime = 0;
+        elapsedTime = 0;
+        endTime = 0;
+        counterClick = 0;
+      });
+
+    document
+      .getElementById("resultSort")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        sortResults(resultarr);
+      });
+  </script>
+</body>

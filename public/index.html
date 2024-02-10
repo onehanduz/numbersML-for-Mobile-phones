@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Numbers</title>
+    <link href="style/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center fs-1">Numbers</h1>
+      <div class="container">
+        <form id="myForm">
+          <div class="row">
+            <div class="mb-3 col-md">
+              <label for="options" class="form-label">Number system</label>
+              <select id="numberSystem" name="numberSystem" class="form-select">
+                <option value="2">Two digit</option>
+                <option value="3">Three digit</option>
+              </select>
+            </div>
+            <div class="mb-3 col-md">
+              <label for="imagePerLocus" class="form-label"
+                >Image per locus</label
+              >
+              <select
+                id="imagePerLocus"
+                name="imagePerLocus"
+                class="form-select"
+              >
+                <option value="1">One imege</option>
+                <option value="2">Two imege</option>
+                <option value="3">Three imege</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="unrepeatable" class="form-label"
+              >Repeatable or Unrepeatable</label
+            >
+            <select id="unrepeatable" name="unrepeatable" class="form-select">
+              <option value="false">Repeatable</option>
+              <option value="true">Unrepeatable</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="amounofnumbers">Amount of number groups</label>
+            <input
+              type="number"
+              class="form-control"
+              id="amounofnumbers"
+              name="amounofnumbers"
+              placeholder="100"
+            />
+          </div>
+          <div class="mb-3 col-md">
+            <label for="arrange" class="form-label">Arrange</label>
+            <select id="arrange" name="arrange" class="form-select">
+              <option value="0-100">00 - 99</option>
+              <option value="0-10">00 - 09</option>
+              <option value="10-20">10 - 19</option>
+              <option value="20-30">20 - 29</option>
+              <option value="30-40">30 - 39</option>
+              <option value="40-50">40 - 49</option>
+              <option value="50-60">50 - 59</option>
+              <option value="60-70">60 - 69</option>
+              <option value="70-80">70 - 79</option>
+              <option value="80-90">80 - 89</option>
+              <option value="90-100">90 - 99</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="amounofnumbers"
+              >AutoAdvanced in ms (1s = 1000ms) per group</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="autoAdvanced"
+              name="autoAdvanced"
+              placeholder="if null AutoAdvanced is off"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <button name="intent" value="save" class="btn btn-primary mt-2">
+              START
+            </button>
+          </div>
+        </form>
+        <div id="numbersDisplay" style="display: none">
+          <div class="position-fixed top-50 start-50 translate-middle">
+            <p
+              style="font-size: 4em"
+              class="text-center mt-5 mb-5 font-weight-bold"
+              id="number1"
+            >
+              Click next button
+            </p>
+          </div>
+          <div class="fixed-bottom mb-5">
+            <div class="d-flex justify-content-center">
+              <button onclick="" id="nextNumber" class="btn btn-primary">
+                <
+              </button>
+              <button
+                onclick="nextNum(0,[0])"
+                id=""
+                class="btn btn-primary ms-4"
+              >
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="style/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
