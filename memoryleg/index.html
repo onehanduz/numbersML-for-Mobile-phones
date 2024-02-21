@@ -12,7 +12,7 @@
           font-size: 4em;
           text-align: center;
         "
-        class="ui huge header"
+        class="huge header"
       >
         Numbers
       </h4>
@@ -21,12 +21,12 @@
     <div>
       <form
         id="numSettings_form"
-        class="ui form container"
         style="font-size: 3em"
+        class="ui form container"
       >
         <div class="huge field">
           <div class="two fields">
-            <div class="huge field">
+            <div class="field">
               <label>Numbers system</label>
               <select name="numberSystem" class="ui hugedropdown">
                 <option value="2">Two digit</option>
@@ -78,6 +78,17 @@
                 <option value="false">No</option>
                 <option value="true">Yes</option>
               </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Only slow numbers</label>
+            <div class="ui input focus">
+              <input
+                name="slownumbers"
+                type="text"
+                placeholder="00 01 02 03 04"
+              />
             </div>
           </div>
           <div class="field">
@@ -192,12 +203,16 @@
             <td>00</td>
             <td>00:00.00</td>
           </tr>
-          <tr>
-            <td>00</td>
-            <td>00:00.00</td>
-          </tr>
         </tbody>
       </table>
+      <button
+        id="resultEnd"
+        style="font-size: 0.7em; margin-top: 0.5em"
+        class="ui green icon button"
+        onclick="copyElements()"
+      >
+        Copy slow 20 element
+      </button>
     </font>
   </div>
   <script src="./semantic/semantic.min.js"></script>

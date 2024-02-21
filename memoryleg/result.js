@@ -102,3 +102,13 @@ function sortResults(arr) {
   arr.sort(compareNumbers);
   printResult(arr);
 }
+function copyElements() {
+  sortResults(resultarr);
+  let text = "";
+  for (let i = 0; i < resultarr.length; i++) {
+    const element = resultarr[i];
+    text = text + " " + memoNums[element.counter];
+    if (i == 19) i = resultarr.length;
+  }
+  navigator.clipboard.writeText(text.trim());
+}
