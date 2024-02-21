@@ -1,16 +1,16 @@
 .numbersMemo {
-  background-color: white;
+  background-color: rgb(56, 56, 56);
   border-radius: 3px;
   font-size: 90%;
   padding: 0.2em;
   position: absolute;
   width: 9em;
   text-align: center;
-  color: 0;
+  color: rgb(255, 255, 255);
 }
 .eventContainer {
-  background-color: gray;
-  background: linear-gradient(to bottom, #999, #888);
+  background-color: black;
+  background: linear-gradient(to bottom, rgb(35, 35, 35), rgb(35, 35, 35));
   border: 1px solid black;
   height: 100%;
   line-height: 1.6286;

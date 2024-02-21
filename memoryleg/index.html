@@ -1,9 +1,19 @@
+<style>
+  :root {
+    --darkBG: #232b32;
+  }
+
+  body.inverted {
+    color: white;
+    background-color: var(--darkBG);
+  }
+</style>
 <head>
   <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css" />
   <link rel="stylesheet" type="text/css" href="app.css" />
 </head>
-<body>
-  <div id="numSettings" class="ui container">
+<body class="inverted inverted">
+  <div id="numSettings" class="inverted ui container">
     <div>
       <h4
         style="
@@ -12,7 +22,7 @@
           font-size: 4em;
           text-align: center;
         "
-        class="huge header"
+        class="inverted huge header"
       >
         Numbers
       </h4>
@@ -22,79 +32,116 @@
       <form
         id="numSettings_form"
         style="font-size: 3em"
-        class="ui form container"
+        class="inverted ui form container"
       >
-        <div class="huge field">
-          <div class="two fields">
-            <div class="field">
+        <div class="inverted huge field">
+          <div class="inverted two fields">
+            <div class="inverted field">
               <label>Numbers system</label>
-              <select name="numberSystem" class="ui hugedropdown">
+              <select
+                style="color: white; background: #232b32"
+                name="numberSystem"
+                class="inverted ui hugedropdown"
+              >
                 <option value="2">Two digit</option>
                 <option value="3">Three digit</option>
               </select>
             </div>
-            <div class="field">
+            <div class="inverted field">
               <label>Image per locus</label>
-              <select name="image" class="ui hugedropdown">
+              <select
+                style="color: white; background: #232b32"
+                name="image"
+                class="inverted ui hugedropdown"
+              >
                 <option value="1">One image</option>
                 <option value="2">Two image</option>
                 <option value="3">Three image</option>
               </select>
             </div>
           </div>
-          <div class="three fields">
-            <div class="field">
+          <div class="inverted three fields">
+            <div class="inverted field">
               <label>Amount</label>
-              <input name="amount" type="number" placeholder="100" />
+              <input
+                style="color: white; background: #232b32"
+                name="amount"
+                type="number"
+                placeholder="100"
+              />
             </div>
-            <div class="field">
+            <div class="inverted field">
               <label>Min</label>
-              <input name="minValue" type="number" placeholder="00" />
+              <input
+                style="color: white; background: #232b32"
+                name="minValue"
+                type="number"
+                placeholder="00"
+              />
             </div>
-            <div class="field">
+            <div class="inverted field">
               <label>Max</label>
-              <input name="maxValue" type="number" placeholder="100" />
+              <input
+                style="color: white; background: #232b32"
+                name="maxValue"
+                type="number"
+                placeholder="100"
+              />
             </div>
           </div>
-          <label class="ui dividing header">Unrepeatable</label>
-          <div class="three fields">
-            <div class="field">
+          <label class="inverted ui dividing header">Unrepeatable</label>
+          <div class="inverted three fields">
+            <div class="inverted field">
               <label>1-image</label>
-              <select name="unrepeatable1" class="ui hugedropdown">
+              <select
+                style="color: white; background: #232b32"
+                name="unrepeatable1"
+                class="inverted ui hugedropdown"
+              >
                 <option value="false">No</option>
                 <option value="true">Yes</option>
               </select>
             </div>
-            <div class="field">
+            <div class="inverted field">
               <label>2-image</label>
-              <select name="unrepeatable2" class="ui hugedropdown">
+              <select
+                style="color: white; background: #232b32"
+                name="unrepeatable2"
+                class="inverted ui hugedropdown"
+              >
                 <option value="false">No</option>
                 <option value="true">Yes</option>
               </select>
             </div>
-            <div class="field">
+            <div class="inverted field">
               <label>3-image</label>
-              <select name="unrepeatable3" class="ui hugedropdown">
+              <select
+                style="color: white; background: #232b32"
+                name="unrepeatable3"
+                class="inverted ui hugedropdown"
+              >
                 <option value="false">No</option>
                 <option value="true">Yes</option>
               </select>
             </div>
           </div>
 
-          <div class="field">
+          <div class="inverted field">
             <label>Only slow numbers</label>
-            <div class="ui input focus">
+            <div class="inverted ui input focus">
               <input
+                style="color: white; background: #232b32"
                 name="slownumbers"
                 type="text"
                 placeholder="00 01 02 03 04"
               />
             </div>
           </div>
-          <div class="field">
+          <div class="inverted field">
             <label>AutoAdvance in ms</label>
-            <div class="ui input focus">
+            <div class="inverted ui input focus">
               <input
+                style="color: white; background-color: #232b32"
                 name="autoAdvanced"
                 type="number"
                 placeholder="default off"
@@ -121,9 +168,13 @@
     </div>
     <!-- NUMBERS -->
   </div>
-  <div id="numMemo" style="display: none" class="ui eventContainer">
+  <div id="numMemo" style="display: none" class="inverted ui eventContainer">
     <div style="margin-top: 1em">
-      <button id="memoEnd" style="font-size: 2em" class="ui icon button">
+      <button
+        id="memoEnd"
+        style="font-size: 2em"
+        class="inverted ui icon button"
+      >
         END
       </button>
       <span id="timeStart" style="font-size: 2em">12:00</span>
@@ -131,7 +182,7 @@
     <div
       style="font-size: 12em"
       id="memoMidNum"
-      class="numbersMemo numbersMemoMid"
+      class="inverted numbersMemo numbersMemoMid"
     >
       Start
     </div>
@@ -152,34 +203,44 @@
           class="horizontally flipped play icon"
         ></i>
       </button>
-      <button class="ui primary icon huge button memoNext" onclick="memoNext()">
+      <button class="ui green icon huge button memoNext" onclick="memoNext()">
         <i style="font-size: 4em; padding-top: 25" class="play icon"></i>
       </button>
     </div>
   </div>
-  <div id="numResult" style="display: none" class="ui container">
+  <div id="numResult" style="display: none" class="inverted ui container">
     <font size="9">
       <div style="display: flex; justify-content: center">
         <button
           id="resultEnd"
-          style="font-size: 0.8em; margin-top: 0.5em"
+          style="font-size: 0.85em; margin-top: 0.5em"
           class="ui primary icon button"
         >
           Return
         </button>
         <button
           id="resultSort"
-          style="font-size: 0.8em; margin-top: 0.5em"
+          style="font-size: 0.85em; margin-top: 0.5em"
           class="ui primary icon button"
         >
           Sort
         </button>
       </div>
-      <table class="ui table">
+      <div style="display: flex; justify-content: center">
+        <button
+          id="resultEnd"
+          style="font-size: 0.7em; margin-top: 0.7em"
+          class="inverted ui green icon button"
+          onclick="copyElements()"
+        >
+          Copy slow 20 element
+        </button>
+      </div>
+      <table class="inverted ui table">
         <thead>
           <tr>
-            <th class="ten wide">Params</th>
-            <th class="six wide">Results</th>
+            <th class="inverted ten wide">Params</th>
+            <th class="inverted six wide">Results</th>
           </tr>
           <tr>
             <td>Amount:</td>
@@ -194,8 +255,8 @@
             <td id="timeofavarage"></td>
           </tr>
           <tr>
-            <th class="ten wide">Numbers</th>
-            <th class="six wide">Time</th>
+            <th class="inverted ten wide">Numbers</th>
+            <th class="inverted six wide">Time</th>
           </tr>
         </thead>
         <tbody id="memoResults">
@@ -205,14 +266,6 @@
           </tr>
         </tbody>
       </table>
-      <button
-        id="resultEnd"
-        style="font-size: 0.7em; margin-top: 0.5em"
-        class="ui green icon button"
-        onclick="copyElements()"
-      >
-        Copy slow 20 element
-      </button>
     </font>
   </div>
   <script src="./semantic/semantic.min.js"></script>
