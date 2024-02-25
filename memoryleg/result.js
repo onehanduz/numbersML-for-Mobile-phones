@@ -104,11 +104,12 @@ function sortResults(arr) {
 }
 function copyElements() {
   sortResults(resultarr);
+  let time = Number(endTime - startTime);
+  let avarage = Number(time / resultarr.length);
   let text = "";
   for (let i = 0; i < resultarr.length; i++) {
     const element = resultarr[i];
-    text = text + " " + memoNums[element.counter];
-    if (i == 19) i = resultarr.length;
+    if (element.time > avarage) text = text + " " + memoNums[element.counter];
   }
   navigator.clipboard.writeText(text.trim());
 }

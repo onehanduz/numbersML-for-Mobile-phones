@@ -12,6 +12,7 @@ function memoReturn() {
   resultTime[resultTime.length - 1].stop = Date.now();
   counterClick = 0;
   document.getElementById("memoMidNum").innerHTML = memoNums[counterClick];
+  document.getElementById("statusBar").innerHTML = `0/${memoNums.length - 1}`;
 }
 function memoPrev() {
   if (counterClick > 0) {
@@ -19,6 +20,9 @@ function memoPrev() {
     counterClick--;
   }
   document.getElementById("memoMidNum").innerHTML = memoNums[counterClick];
+  document.getElementById("statusBar").innerHTML = `${counterClick}/${
+    memoNums.length - 1
+  }`;
   if (counterClick != 0) {
     resultTime.push({ counter: counterClick, start: Date.now(), stop: 0 });
   }
@@ -34,6 +38,9 @@ function memoNext() {
     counterClick++;
   }
   document.getElementById("memoMidNum").innerHTML = memoNums[counterClick];
+  document.getElementById("statusBar").innerHTML = `${counterClick}/${
+    memoNums.length - 1
+  }`;
   resultTime.push({ counter: counterClick, start: Date.now(), stop: 0 });
 }
 
@@ -116,9 +123,11 @@ function generateNumsUnrepImg(objd) {
 
 function generateNums(objd) {
   if (objd.slownumbers) {
-    for (let i = 0; i < objd.amount; i++) {
-      let element = getRandomInt(1, objd.slownumbers.length);
-      memoNums.push(objd.slownumbers[element]);
+    let slownumbers = [...objd.slownumbers];
+    for (let i = 0; i < objd.slownumbers.length; i++) {
+      let element = getRandomInt(0, slownumbers.length);
+      memoNums.push(slownumbers[element]);
+      slownumbers.splice(element, 1);
     }
   } else {
     if (
@@ -183,5 +192,5 @@ function getData(form) {
       if (pair[1] !== "") obj.autoAdvanced = pair[1];
     }
   }
-    return obj;
+  return obj;
 }
