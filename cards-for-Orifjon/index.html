@@ -25,7 +25,7 @@
         "
         class="inverted huge header"
       >
-        Numbers
+        Cards
       </h4>
     </div>
     <!-- SETTINGSs -->
@@ -36,14 +36,14 @@
         class="inverted ui form container"
       >
         <div class="inverted huge field">
-          <div class="inverted fields">
+          <div class="inverted two fields">
             <div class="inverted field">
               <label>Amount</label>
               <input
                 style="color: white; background: #232b32"
                 name="amount"
                 type="number"
-                placeholder="1000"
+                placeholder="256"
               />
             </div>
             <div class="inverted field">
@@ -55,48 +55,60 @@
                 placeholder="1"
               />
             </div>
+          </div>
+          <div class="inverted two fields">
             <div class="inverted field">
-              <label>Unrepeatable</label>
+              <label>Min</label>
+              <input
+                style="color: white; background: #232b32"
+                name="minValue"
+                type="number"
+                placeholder="0"
+              />
+            </div>
+            <div class="inverted field">
+              <label>Max</label>
+              <input
+                style="color: white; background: #232b32"
+                name="maxValue"
+                type="number"
+                placeholder="256"
+              />
+            </div>
+          </div>
+          <div class="inverted field">
+            <div class="inverted field">
+              <label class="inverted ui dividing header">Unrepeatable</label>
               <select
                 style="color: white; background: #232b32"
-                name="unrepeatable1"
+                name="unrepeatable"
                 class="inverted ui hugedropdown"
               >
                 <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>
             </div>
-          </div>
-          <div class="inverted two fields">
-            <div class="inverted field">
-              <label>Min 10♥️6♥️</label>
-              <input
+            <!-- <div class="inverted field">
+              <label class="inverted ui dividing header">Ordered</label>
+              <select
                 style="color: white; background: #232b32"
-                name="minValue1"
-                type="number"
-                placeholder="000"
-              />
-            </div>
-            <div class="inverted field">
-              <label>Max:</label>
-              <input
-                style="color: white; background: #232b32"
-                name="maxValue1"
-                type="number"
-                placeholder="1360"
-              />
-            </div>
+                name="ordered"
+                class="inverted ui hugedropdown"
+              >
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div> -->
           </div>
-          <div class="inverted two fields"></div>
 
           <div class="inverted field">
-            <label>Slow numbers</label>
+            <label>Selected</label>
             <div class="inverted ui input focus">
               <input
                 style="color: white; background: #232b32"
                 name="slownumbers"
                 type="text"
-                placeholder="00 01 02 03 04"
+                placeholder=""
               />
             </div>
           </div>
@@ -107,7 +119,7 @@
                 style="color: white; background-color: #232b32"
                 name="autoAdvanced"
                 type="number"
-                placeholder="default off"
+                placeholder="off"
               />
             </div>
           </div>
@@ -122,7 +134,12 @@
           </button>
         </div>
       </form>
-      <div></div>
+      <div>
+        <h2>
+          Talab va kamchiliklar bo'lsa github.com/onehanduz yoki t.me/onehand_1
+          ga murojaat qiling!
+        </h2>
+      </div>
     </div>
     <!-- NUMBERS -->
   </div>
@@ -148,9 +165,6 @@
     </div>
 
     <div>
-      <!-- <button class="ui yellow icon huge button memoHint" onclick="memoShow()">
-        <h2 style="font-size: 3em">show</h2>
-      </button> -->
       <button
         style="margin-inline-start: -2em"
         class="ui primary icon huge button memoReturn"
@@ -268,10 +282,7 @@
         memoNext();
         start();
         if (numSettings.autoAdvanced != false) {
-          interval = setInterval(
-            memoNext,
-            Number(numSettings.autoAdvanced) * 100
-          );
+          interval = setInterval(memoNext, numSettings.autoAdvanced);
         }
       });
     document.getElementById("memoEnd").addEventListener("click", function (e) {

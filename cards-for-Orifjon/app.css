@@ -21,16 +21,11 @@
 }
 .numbersMemoMid {
   font-size: 500%;
-  top: 25%;
+  top: 40%;
 }
 .memoReturn {
   left: 25%;
   bottom: 10em;
-  position: absolute;
-}
-.memoHint {
-  right: 22%;
-  bottom: 19em;
   position: absolute;
 }
 .memoPrev {
