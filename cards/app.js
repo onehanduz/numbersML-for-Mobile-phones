@@ -122,37 +122,24 @@ function generateNumsUnrepImg(objd) {
 }
 
 function generateNums(objd) {
-  if (objd.slownumbers) {
-    let slownumbers = [...objd.slownumbers];
-    for (let i = 0; i < objd.slownumbers.length; i++) {
-      let element = getRandomInt(0, slownumbers.length);
-      memoNums.push(slownumbers[element]);
-      slownumbers.splice(element, 1);
-    }
+  if (
+    objd.unrepeatable1 != "true" &&
+    objd.unrepeatable2 != "true" &&
+    objd.unrepeatable3 != "true"
+  ) {
+    generateNumsRep(objd);
   } else {
-    if (
-      objd.unrepeatable1 != "true" &&
-      objd.unrepeatable2 != "true" &&
-      objd.unrepeatable3 != "true"
-    ) {
-      generateNumsRep(objd);
-    } else {
-      generateNumsUnrepImg(objd);
-    }
+    generateNumsUnrepImg(objd);
   }
 }
 
 function getData(form) {
   obj = {
     numberSystem: 2,
-    image: 1,
-    amount: 100,
+    compact: false,
+    amount: 1,
     minValue: 0,
-    maxValue: 100,
-    slownumbers: false,
-    unrepeatable1: false,
-    unrepeatable2: false,
-    unrepeatable3: false,
+    maxValue: 51,
     autoAdvanced: false,
   };
   var formData = new FormData(form);
@@ -160,8 +147,8 @@ function getData(form) {
     if (pair[0] == "numberSystem") {
       obj.numberSystem = pair[1];
     }
-    if (pair[0] == "image") {
-      obj.image = pair[1];
+    if (pair[0] == "compact") {
+      obj.compact = pair[1];
     }
     if (pair[0] == "amount") {
       if (pair[1] > 0) obj.amount = pair[1];
@@ -172,21 +159,6 @@ function getData(form) {
     if (pair[0] == "maxValue") {
       if (obj.numberSystem == 3) obj.maxValue = 1000;
       if (pair[1] > 0) obj.maxValue = pair[1];
-    }
-    if (pair[0] == "unrepeatable1") {
-      obj.unrepeatable1 = pair[1];
-    }
-    if (pair[0] == "unrepeatable2") {
-      obj.unrepeatable2 = pair[1];
-    }
-    if (pair[0] == "unrepeatable3") {
-      obj.unrepeatable3 = pair[1];
-    }
-    if (pair[0] == "slownumbers") {
-      if (pair[1] != "") {
-        let num = pair[1].split(" ");
-        obj.slownumbers = num;
-      }
     }
     if (pair[0] == "autoAdvanced") {
       if (pair[1] !== "") obj.autoAdvanced = pair[1];

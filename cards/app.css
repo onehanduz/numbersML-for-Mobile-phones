@@ -1,5 +1,5 @@
 .numbersMemo {
-  background-color: rgb(56, 56, 56);
+  background-color: rgb(35, 35, 35);
   border-radius: 3px;
   font-size: 90%;
   padding: 0.2em;
@@ -21,7 +21,7 @@
 }
 .numbersMemoMid {
   font-size: 500%;
-  top: 40%;
+  top: 30%;
 }
 .memoReturn {
   left: 25%;
@@ -37,4 +37,352 @@
   left: 55%;
   bottom: 10em;
   position: absolute;
+}
+
+.card0_a {
+  background-image: url("./cards/card0.svg");
+}
+.card1_a {
+  background-image: url("./cards/card1.svg");
+}
+.card2_a {
+  background-image: url("./cards/card2.svg");
+}
+.card3_a {
+  background-image: url("./cards/card3.svg");
+}
+.card4_a {
+  background-image: url("./cards/card4.svg");
+}
+.card5_a {
+  background-image: url("./cards/card5.svg");
+}
+.card6_a {
+  background-image: url("./cards/card6.svg");
+}
+.card7_a {
+  background-image: url("./cards/card7.svg");
+}
+.card8_a {
+  background-image: url("./cards/card8.svg");
+}
+.card9_a {
+  background-image: url("./cards/card9.svg");
+}
+.card10_a {
+  background-image: url("./cards/card10.svg");
+}
+.card11_a {
+  background-image: url("./cards/card11.svg");
+}
+.card12_a {
+  background-image: url("./cards/card12.svg");
+}
+.card13_a {
+  background-image: url("./cards/card13.svg");
+}
+.card14_a {
+  background-image: url("./cards/card14.svg");
+}
+.card15_a {
+  background-image: url("./cards/card15.svg");
+}
+.card16_a {
+  background-image: url("./cards/card16.svg");
+}
+.card17_a {
+  background-image: url("./cards/card17.svg");
+}
+.card18_a {
+  background-image: url("./cards/card18.svg");
+}
+.card19_a {
+  background-image: url("./cards/card19.svg");
+}
+.card20_a {
+  background-image: url("./cards/card20.svg");
+}
+.card21_a {
+  background-image: url("./cards/card21.svg");
+}
+.card22_a {
+  background-image: url("./cards/card22.svg");
+}
+.card23_a {
+  background-image: url("./cards/card23.svg");
+}
+.card24_a {
+  background-image: url("./cards/card24.svg");
+}
+.card25_a {
+  background-image: url("./cards/card25.svg");
+}
+.card26_a {
+  background-image: url("./cards/card26.svg");
+}
+.card27_a {
+  background-image: url("./cards/card27.svg");
+}
+.card28_a {
+  background-image: url("./cards/card28.svg");
+}
+.card29_a {
+  background-image: url("./cards/card29.svg");
+}
+.card30_a {
+  background-image: url("./cards/card30.svg");
+}
+.card31_a {
+  background-image: url("./cards/card31.svg");
+}
+.card32_a {
+  background-image: url("./cards/card32.svg");
+}
+.card33_a {
+  background-image: url("./cards/card33.svg");
+}
+.card34_a {
+  background-image: url("./cards/card34.svg");
+}
+.card35_a {
+  background-image: url("./cards/card35.svg");
+}
+.card36_a {
+  background-image: url("./cards/card36.svg");
+}
+.card37_a {
+  background-image: url("./cards/card37.svg");
+}
+.card38_a {
+  background-image: url("./cards/card38.svg");
+}
+.card39_a {
+  background-image: url("./cards/card39.svg");
+}
+.card40_a {
+  background-image: url("./cards/card40.svg");
+}
+.card41_a {
+  background-image: url("./cards/card41.svg");
+}
+.card42_a {
+  background-image: url("./cards/card42.svg");
+}
+.card43_a {
+  background-image: url("./cards/card43.svg");
+}
+.card44_a {
+  background-image: url("./cards/card44.svg");
+}
+.card45_a {
+  background-image: url("./cards/card45.svg");
+}
+.card46_a {
+  background-image: url("./cards/card46.svg");
+}
+.card47_a {
+  background-image: url("./cards/card47.svg");
+}
+.card48_a {
+  background-image: url("./cards/card48.svg");
+}
+.card49_a {
+  background-image: url("./cards/card49.svg");
+}
+.card50_a {
+  background-image: url("./cards/card50.svg");
+}
+.card51_a {
+  background-image: url("./cards/card51.svg");
+}
+
+.cardsMemo_a {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-left: 1px solid gray;
+  border-radius: 8px;
+  height: 50%;
+  position: absolute;
+  width: 50%;
+}
+
+.cardsMemo_e,
+.cardsMemo_f,
+.cardsMemo_s {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 400px;
+  position: absolute;
+  width: 285.7px;
+}
+
+.cardsMemo_g {
+  background-position-x: -1px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-left: 1px solid gray;
+  border-radius: 6px;
+  position: absolute;
+  height: 157px;
+  width: 104px;
+}
+
+.cardsCompeteMemo {
+  position: relative;
+}
+
+.cardsMemoPos1Of1 {
+  left: 13%;
+  z-index: 51;
+  -webkit-transform: translate(666px, 90px) scale(1.4);
+  transform: translate(666px, 90px) scale(1.4);
+  -webkit-transform-origin: 666px 90px;
+  transform-origin: 666px 90px;
+}
+
+.cardsMemoPos1Of2 {
+  left: 11%;
+  z-index: 51;
+  -webkit-transform: translate(623px, 90px) scale(1.4);
+  transform: translate(623px, 90px) scale(1.4);
+  -webkit-transform-origin: 623px 90px;
+  transform-origin: 623px 90px;
+}
+.cardsMemoPos2Of2 {
+  left: 11%;
+  z-index: 52;
+  -webkit-transform: translate(853px, 90px) scale(1.4);
+  transform: translate(853px, 90px) scale(1.4);
+  -webkit-transform-origin: 853px 90px;
+  transform-origin: 853px 90px;
+}
+.cardsMemoPos1Of2Compact {
+  left: 11%;
+  z-index: 51;
+  -webkit-transform: translate(644px, 90px) scale(1.4);
+  transform: translate(644px, 90px) scale(1.4);
+  -webkit-transform-origin: 644px 90px;
+  transform-origin: 644px 90px;
+}
+.cardsMemoPos2Of2Compact {
+  left: 11%;
+  z-index: 52;
+  -webkit-transform: translate(734px, 90px) scale(1.4);
+  transform: translate(734px, 90px) scale(1.4);
+  -webkit-transform-origin: 734px 90px;
+  transform-origin: 734px 90px;
+}
+
+.cardsMemoPos1Of3 {
+  left: 10%;
+  z-index: 51;
+  -webkit-transform: translate(580px, 90px) scale(1.4);
+  transform: translate(580px, 90px) scale(1.4);
+  -webkit-transform-origin: 580px 90px;
+  transform-origin: 580px 90px;
+}
+.cardsMemoPos2Of3 {
+  left: 10%;
+  z-index: 52;
+  -webkit-transform: translate(800px, 90px) scale(1.4);
+  transform: translate(800px, 90px) scale(1.4);
+  -webkit-transform-origin: 800px 90px;
+  transform-origin: 800px 90px;
+}
+.cardsMemoPos3Of3 {
+  left: 10%;
+  z-index: 53;
+  -webkit-transform: translate(1020px, 90px) scale(1.4);
+  transform: translate(1020px, 90px) scale(1.4);
+  -webkit-transform-origin: 1020px 90px;
+  transform-origin: 1020px 90px;
+}
+.cardsMemoPos1Of3Compact {
+  left: 12%;
+  z-index: 51;
+  -webkit-transform: translate(623px, 90px) scale(1.4);
+  transform: translate(623px, 90px) scale(1.4);
+  -webkit-transform-origin: 623px 90px;
+  transform-origin: 623px 90px;
+}
+.cardsMemoPos2Of3Compact {
+  left: 12%;
+  z-index: 52;
+  -webkit-transform: translate(713px, 90px) scale(1.4);
+  transform: translate(713px, 90px) scale(1.4);
+  -webkit-transform-origin: 713px 90px;
+  transform-origin: 713px 90px;
+}
+.cardsMemoPos3Of3Compact {
+  left: 12%;
+  z-index: 53;
+  -webkit-transform: translate(803px, 90px) scale(1.4);
+  transform: translate(803px, 90px) scale(1.4);
+  -webkit-transform-origin: 803px 90px;
+  transform-origin: 803px 90px;
+}
+
+.cardsMemoPos1Of4 {
+  left: 6%;
+  z-index: 51;
+  -webkit-transform: translate(537px, 90px) scale(1.4);
+  transform: translate(537px, 90px) scale(1.4);
+  -webkit-transform-origin: 537px 90px;
+  transform-origin: 537px 90px;
+}
+.cardsMemoPos2Of4 {
+  left: 6%;
+  z-index: 52;
+  -webkit-transform: translate(757px, 90px) scale(1.4);
+  transform: translate(757px, 90px) scale(1.4);
+  -webkit-transform-origin: 757px 90px;
+  transform-origin: 757px 90px;
+}
+.cardsMemoPos3Of4 {
+  left: 6%;
+  z-index: 53;
+  -webkit-transform: translate(977px, 90px) scale(1.4);
+  transform: translate(977px, 90px) scale(1.4);
+  -webkit-transform-origin: 977px 90px;
+  transform-origin: 977px 90px;
+}
+.cardsMemoPos4Of4 {
+  left: 6%;
+  z-index: 54;
+  -webkit-transform: translate(1197px, 90px) scale(1.4);
+  transform: translate(1197px, 90px) scale(1.4);
+  -webkit-transform-origin: 1197px 90px;
+  transform-origin: 1197px 90px;
+}
+.cardsMemoPos1Of4Compact {
+  left: 11%;
+  z-index: 51;
+  -webkit-transform: translate(601px, 90px) scale(1.4);
+  transform: translate(601px, 90px) scale(1.4);
+  -webkit-transform-origin: 601px 90px;
+  transform-origin: 601px 90px;
+}
+.cardsMemoPos2Of4Compact {
+  left: 11%;
+  z-index: 52;
+  -webkit-transform: translate(691px, 90px) scale(1.4);
+  transform: translate(691px, 90px) scale(1.4);
+  -webkit-transform-origin: 691px 90px;
+  transform-origin: 691px 90px;
+}
+.cardsMemoPos3Of4Compact {
+  left: 11%;
+  z-index: 53;
+  -webkit-transform: translate(781px, 90px) scale(1.4);
+  transform: translate(781px, 90px) scale(1.4);
+  -webkit-transform-origin: 781px 90px;
+  transform-origin: 781px 90px;
+}
+.cardsMemoPos4Of4Compact {
+  left: 11%;
+  z-index: 54;
+  -webkit-transform: translate(871px, 90px) scale(1.4);
+  transform: translate(871px, 90px) scale(1.4);
+  -webkit-transform-origin: 871px 90px;
+  transform-origin: 871px 90px;
 }

@@ -24,7 +24,7 @@
         "
         class="inverted huge header"
       >
-        Numbers
+        Cards
       </h4>
     </div>
     <!-- SETTINGSs -->
@@ -37,37 +37,38 @@
         <div class="inverted huge field">
           <div class="inverted two fields">
             <div class="inverted field">
-              <label>Numbers system</label>
+              <label>Card system</label>
               <select
                 style="color: white; background: #232b32"
                 name="numberSystem"
                 class="inverted ui hugedropdown"
               >
-                <option value="2">Two digit</option>
-                <option value="3">Three digit</option>
+                <option value="2">One card</option>
+                <option value="3">Two cards</option>
+                <option value="3">Three cards</option>
+                <option value="3">Four cards</option>
               </select>
             </div>
             <div class="inverted field">
-              <label>Image per locus</label>
+              <label>Compact</label>
               <select
                 style="color: white; background: #232b32"
-                name="image"
+                name="compact"
                 class="inverted ui hugedropdown"
               >
-                <option value="1">One image</option>
-                <option value="2">Two image</option>
-                <option value="3">Three image</option>
+                <option value="false">No</option>
+                <option value="2">True</option>
               </select>
             </div>
           </div>
           <div class="inverted three fields">
             <div class="inverted field">
-              <label>Amount</label>
+              <label>Amount of deck</label>
               <input
                 style="color: white; background: #232b32"
                 name="amount"
                 type="number"
-                placeholder="100"
+                placeholder="1"
               />
             </div>
             <div class="inverted field">
@@ -76,7 +77,7 @@
                 style="color: white; background: #232b32"
                 name="minValue"
                 type="number"
-                placeholder="00"
+                placeholder="0"
               />
             </div>
             <div class="inverted field">
@@ -85,55 +86,7 @@
                 style="color: white; background: #232b32"
                 name="maxValue"
                 type="number"
-                placeholder="100"
-              />
-            </div>
-          </div>
-          <label class="inverted ui dividing header">Unrepeatable</label>
-          <div class="inverted three fields">
-            <div class="inverted field">
-              <label>1-image</label>
-              <select
-                style="color: white; background: #232b32"
-                name="unrepeatable1"
-                class="inverted ui hugedropdown"
-              >
-                <option value="false">No</option>
-                <option value="true">Yes</option>
-              </select>
-            </div>
-            <div class="inverted field">
-              <label>2-image</label>
-              <select
-                style="color: white; background: #232b32"
-                name="unrepeatable2"
-                class="inverted ui hugedropdown"
-              >
-                <option value="false">No</option>
-                <option value="true">Yes</option>
-              </select>
-            </div>
-            <div class="inverted field">
-              <label>3-image</label>
-              <select
-                style="color: white; background: #232b32"
-                name="unrepeatable3"
-                class="inverted ui hugedropdown"
-              >
-                <option value="false">No</option>
-                <option value="true">Yes</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="inverted field">
-            <label>Only slow numbers</label>
-            <div class="inverted ui input focus">
-              <input
-                style="color: white; background: #232b32"
-                name="slownumbers"
-                type="text"
-                placeholder="00 01 02 03 04"
+                placeholder="51"
               />
             </div>
           </div>
@@ -183,38 +136,38 @@
     <h2 style="margin-left: 1em; font-size: 3em" id="statusBar">1/2</h2>
     <div
       style="font-size: 13em"
-      id="memoMidNum"
+      id="memoMidNue"
       class="inverted numbersMemo numbersMemoMid"
     >
-      Start
+      <div class="cardsMemo_e card12_a cardsMemoPos1Of4Compact"></div>
+      <div class="cardsMemo_e card13_a cardsMemoPos2Of4Compact"></div>
+      <div class="cardsMemo_e card38_a cardsMemoPos3Of4Compact"></div>
+      <div class="cardsMemo_e card51_a cardsMemoPos4Of4Compact"></div>
     </div>
-
-    <div>
-      <button
-        style="margin-inline-start: -2em"
-        class="ui primary icon huge button memoReturn"
-        onclick="memoReturn()"
-      >
-        <i
-          style="font-size: 5.5em; padding-top: 37.5"
-          class="fast backward icon"
-          aria-hidden="true"
-        ></i>
-      </button>
-      <button class="ui primary icon huge button memoPrev" onclick="memoPrev()">
-        <i
-          style="font-size: 5.5em; padding-top: 37.5"
-          class="horizontally flipped play icon"
-        ></i>
-      </button>
-      <button
-        style="margin-left: 3em"
-        class="ui green icon huge button memoNext"
-        onclick="memoNext()"
-      >
-        <i style="font-size: 5.5em; padding-top: 37.5" class="play icon"></i>
-      </button>
-    </div>
+    <button
+      style="margin-inline-start: -2em"
+      class="ui primary icon huge button memoReturn"
+      onclick="memoReturn()"
+    >
+      <i
+        style="font-size: 5.5em; padding-top: 37.5"
+        class="fast backward icon"
+        aria-hidden="true"
+      ></i>
+    </button>
+    <button class="ui primary icon huge button memoPrev" onclick="memoPrev()">
+      <i
+        style="font-size: 5.5em; padding-top: 37.5"
+        class="horizontally flipped play icon"
+      ></i>
+    </button>
+    <button
+      style="margin-left: 3em"
+      class="ui green icon huge button memoNext"
+      onclick="memoNext()"
+    >
+      <i style="font-size: 5.5em; padding-top: 37.5" class="play icon"></i>
+    </button>
   </div>
   <div id="numResult" style="display: none" class="inverted ui container">
     <font size="9">
