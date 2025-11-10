@@ -97,35 +97,27 @@ function numbersRepeatable(objd) {
   }
 }
 function numbersUnrepeatable(objd) {
-  let digits = objd.numberSystem == 3 ? threeDigits : twoDigits;
+  let digits = threeDigits;
   if (objd.minValue < digits.length && objd.maxValue <= digits.length) {
-    if (objd.image == 1) {
-      let elements = getRandomElements(objd);
-      for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        memoNums.push(digits[element]);
-      }
-    } else if (objd.image == 2) {
-      let elements = getRandomElements(objd);
-      let elements2 = getRandomElements(objd);
-      for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        const element2 = elements2[i];
-        memoNums.push(digits[element] + " " + digits(element2));
-      }
-    } else if (objd.image == 3) {
-      let elements = getRandomElements(objd);
-      let elements2 = getRandomElements(objd);
-      let elements3 = getRandomElements(objd);
-
-      for (let i = 0; i < elements.length; i++) {
-        const element = elements[i];
-        const element2 = elements2[i];
-        const element3 = elements3[i];
+    let elements = getRandomElements(objd);
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      let object = cardGen(threeDigits[element]);
+      if (objd.image == 1) {
         memoNums.push(
-          digits[element] + " " + digits(element2) + " " + digits(element3)
+          imgGenenrator(object[0], 1) + imgGenenrator(object[1], 2)
+        );
+        memoNums.push(
+          imgGenenrator(object[2], 1) + imgGenenrator(object[3], 2)
         );
       }
+      if (objd.image == 2)
+        memoNums.push(
+          imgGenenrator(object[0], 1) +
+            imgGenenrator(object[1], 2) +
+            imgGenenrator(object[2], 3) +
+            imgGenenrator(object[3], 4)
+        );
     }
   }
 }
@@ -158,7 +150,7 @@ function getData(form) {
     image: 1,
     amount: 100,
     minValue: 0,
-    maxValue: 1360,
+    maxValue: 1352,
     slownumbers: false,
     repeatable: false,
     sorted: 0,
