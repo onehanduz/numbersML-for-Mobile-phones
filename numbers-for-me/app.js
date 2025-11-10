@@ -1,83 +1,94 @@
-let counterClick = 0;
-let resultTime = [];
-let memoNums = ["START"];
-
-function getRandomInt(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
+function getRandomInt(objd) {
+  const minCeiled = Math.ceil(objd.minValue);
+  const maxFloored = Math.floor(objd.maxValue);
   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
 
-function memoReturn() {
-  resultTime[resultTime.length - 1].stop = Date.now();
-  counterClick = 0;
-  document.getElementById("memoMidNum").innerHTML = memoNums[counterClick];
-  document.getElementById("statusBar").innerHTML = `0/${memoNums.length - 1}`;
-}
-function memoPrev() {
-  if (counterClick > 0) {
-    resultTime[resultTime.length - 1].stop = Date.now();
-    counterClick--;
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  while (currentIndex != 0) {
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
-  document.getElementById("memoMidNum").innerHTML = memoNums[counterClick];
-  document.getElementById("statusBar").innerHTML = `${counterClick}/${
-    memoNums.length - 1
-  }`;
-  if (counterClick != 0) {
-    resultTime.push({ counter: counterClick, start: Date.now(), stop: 0 });
-  }
-}
-function memoNext() {
-  if (resultTime[resultTime.length - 1] && counterClick > 0) {
-    resultTime[resultTime.length - 1].stop = Date.now();
-  }
-  if (memoNums.length - 1 == counterClick) {
-    document.getElementById("memoEnd").click();
-  }
-  if (counterClick < memoNums.length - 1) {
-    counterClick++;
-  }
-  document.getElementById("memoMidNum").innerHTML = memoNums[counterClick];
-  document.getElementById("statusBar").innerHTML = `${counterClick}/${
-    memoNums.length - 1
-  }`;
-  resultTime.push({ counter: counterClick, start: Date.now(), stop: 0 });
 }
 
-function generateNumsRep(objd) {
+const createNumberRange = (start, end, step = 1) => {
+  const length = Math.floor((end - start) / step) + 1;
+  return Array.from({ length }, (_, index) => start + index * step);
+};
+
+function getRandomElements(objd) {
+  const minCeiled = Math.ceil(objd.minValue);
+  const maxFloored = Math.floor(objd.maxValue) - 1;
+  let elements = createNumberRange(minCeiled, maxFloored);
+  shuffle(elements);
+
+  return elements;
+}
+
+function generateNumber(objd) {
+  let result = "error";
+  let digits = objd.numberSystem == 3 ? threeDigits : twoDigits;
+  if (objd.minValue < digits.length && objd.maxValue <= digits.length) {
+    let element = getRandomInt(objd);
+    result = digits[element];
+  }
+  return result;
+}
+
+function numbersRepeatable(objd) {
   for (let i = 0; i < objd.amount; i++) {
-    let digit = threeDigits;
-    let element1 = getRandomInt(objd.minValue1, objd.maxValue1);
-    let element2 = getRandomInt(objd.minValue2, objd.maxValue2);
-    if (element1 < digit.length && element2 < digit.length) {
-      let ren = digit[element1].split(" ");
-      if (ren[1] != " ") {
-        let ran = ren[1].split("/");
-        memoNums.push(ren[0] + "<br>" + ran[0] + "<br>" + ran[1]);
-      } else {
-        memoNums.push(ren[0]);
-      }
+    if (objd.image == 1) {
+      memoNums.push(generateNumber(objd));
+    } else if (objd.image == 2) {
+      memoNums.push(generateNumber(objd) + " " + generateNumber(objd));
+    } else if (objd.image == 3) {
+      memoNums.push(
+        generateNumber(objd) +
+          " " +
+          generateNumber(objd) +
+          " " +
+          generateNumber(objd)
+      );
     }
   }
 }
 
-function generateNumsUnrepImg(objd) {
-  for (let i = 0; i < objd.cycle; i++) {
-    let newDigits1 = threeDigits.slice(objd.minValue1, objd.maxValue1);
-    let amount = newDigits1.length;
-    for (let i = 0; i < amount; i++) {
-      let element1 = getRandomInt(0, newDigits1.length);
-      if (objd.unrepeatable1 == "true") {
-        let ren = newDigits1[element1].split(" ");
-        if (ren[1] != undefined) {
-          let ran = ren[1].split("/");
-          memoNums.push(ren[0] + "<br>" + ran[0] + "<br>" + ran[1]);
-        } else {
-          memoNums.push(ren[0]);
-        }
-        newDigits1.splice(element1, 1);
-      } else {
-        return generateNumsRep(objd);
+function numbersUnrepeatable(objd) {
+  let digits = objd.numberSystem == 3 ? threeDigits : twoDigits;
+  if (objd.minValue < digits.length && objd.maxValue <= digits.length) {
+    if (objd.image == 1) {
+      let elements = getRandomElements(objd);
+      for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        memoNums.push(digits[element]);
+      }
+    } else if (objd.image == 2) {
+      let elements = getRandomElements(objd);
+      let elements2 = getRandomElements(objd);
+      for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const element2 = elements2[i];
+        memoNums.push(digits[element] + " " + digits(element2));
+      }
+    } else if (objd.image == 3) {
+      let elements = getRandomElements(objd);
+      let elements2 = getRandomElements(objd);
+      let elements3 = getRandomElements(objd);
+
+      for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        const element2 = elements2[i];
+        const element3 = elements3[i];
+        memoNums.push(
+          digits[element] + " " + digits(element2) + " " + digits(element3)
+        );
       }
     }
   }
@@ -85,67 +96,61 @@ function generateNumsUnrepImg(objd) {
 
 function generateNums(objd) {
   if (objd.slownumbers) {
-    for (let i = 0; i < objd.cycle; i++) {
-      let slownumbers = [...objd.slownumbers];
-      for (let i = 0; i < objd.slownumbers.length; i++) {
-        let element = getRandomInt(0, slownumbers.length);
-        memoNums.push(slownumbers[element]);
-        slownumbers.splice(element, 1);
-      }
+    let slownumbers = [...objd.slownumbers];
+    for (let i = 0; i < objd.slownumbers.length; i++) {
+      let element = getRandomInt({ minValue: 0, maxValue: slownumbers.length });
+      memoNums.push(slownumbers[element]);
+      slownumbers.splice(element, 1);
     }
   } else {
-    if (objd.unrepeatable1 != "true") {
-      generateNumsRep(objd);
+    if (objd.repeatable == "true") {
+      numbersRepeatable(objd);
     } else {
-      generateNumsUnrepImg(objd);
+      numbersUnrepeatable(objd);
+    }
+    if (objd.sorted == "1") {
+      memoNums.sort((a, b) => parseInt(a) - parseInt(b));
+    } else if (objd.sorted == "2") {
+      memoNums.sort((a, b) => parseInt(b) - parseInt(a));
     }
   }
 }
 
 function getData(form) {
   obj = {
-    cycle: 1,
+    numberSystem: 2,
     image: 1,
-    amount: 1000,
-    minValue1: 0,
-    minValue2: 0,
-    maxValue1: 1360,
-    maxValue2: 1360,
+    amount: 100,
+    minValue: 0,
+    maxValue: 100,
     slownumbers: false,
-    unrepeatable1: true,
-    unrepeatable2: true,
+    repeatable: false,
+    sorted: 0,
     autoAdvanced: false,
   };
   var formData = new FormData(form);
   for (var pair of formData.entries()) {
+    if (pair[0] == "numberSystem") {
+      obj.numberSystem = pair[1];
+    }
     if (pair[0] == "image") {
       obj.image = pair[1];
     }
     if (pair[0] == "amount") {
       if (pair[1] > 0) obj.amount = pair[1];
     }
-    if (pair[0] == "cycle") {
-      if (pair[1] > 0) obj.cycle = pair[1];
+    if (pair[0] == "minValue") {
+      if (pair[1] > 0) obj.minValue = pair[1];
     }
-    if (pair[0] == "minValue1") {
-      if (pair[1] > 0) obj.minValue1 = pair[1];
-    }
-    if (pair[0] == "maxValue1") {
+    if (pair[0] == "maxValue") {
       if (obj.numberSystem == 3) obj.maxValue = 1000;
-      if (pair[1] > 0) obj.maxValue1 = pair[1];
+      if (pair[1] > 0) obj.maxValue = pair[1];
     }
-    if (pair[0] == "minValue2") {
-      if (pair[1] > 0) obj.minValue1 = pair[1];
+    if (pair[0] == "repeatable") {
+      obj.repeatable = pair[1];
     }
-    if (pair[0] == "maxValue2") {
-      if (obj.numberSystem == 3) obj.maxValue = 1000;
-      if (pair[1] > 0) obj.maxValue2 = pair[1];
-    }
-    if (pair[0] == "unrepeatable1") {
-      obj.unrepeatable1 = pair[1];
-    }
-    if (pair[0] == "unrepeatable2") {
-      obj.unrepeatable2 = pair[1];
+    if (pair[0] == "sorted") {
+      obj.sorted = pair[1];
     }
     if (pair[0] == "slownumbers") {
       if (pair[1] != "") {
@@ -154,7 +159,7 @@ function getData(form) {
       }
     }
     if (pair[0] == "autoAdvanced") {
-      if (pair[1] !== "") obj.autoAdvanced = pair[1];
+      if (pair[1] !== "") obj.autoAdvanced = parseInt(pair[1]) * 10;
     }
   }
   return obj;

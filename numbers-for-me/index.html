@@ -10,10 +10,9 @@
 </style>
 <head>
   <link rel="stylesheet" type="text/css" href="./semantic/semantic.min.css" />
-  <link rel="stylesheet" type="text/css" href="app.css" />
-  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="numbers.css" />
 </head>
-<body class="inverted inverted">
+<body class="inverted">
   <div id="numSettings" class="inverted ui container">
     <div>
       <h4
@@ -36,75 +35,112 @@
         class="inverted ui form container"
       >
         <div class="inverted huge field">
-          <div class="inverted fields">
+          <div class="inverted two fields">
+            <div class="inverted field">
+              <label>Numbers system</label>
+              <select
+                style="color: white; background: #232b32; margin-top: 10px"
+                name="numberSystem"
+                class="inverted ui hugedropdown"
+              >
+                <option value="3">Three digit</option>
+                <option value="2">Two digit</option>
+              </select>
+            </div>
+            <div class="inverted field">
+              <label>Image per locus</label>
+              <select
+                style="color: white; background: #232b32; margin-top: 10px"
+                name="image"
+                class="inverted ui hugedropdown"
+              >
+                <option value="1">One image</option>
+                <option value="2">Two image</option>
+                <option value="3">Three image</option>
+              </select>
+            </div>
+          </div>
+          <div class="inverted three fields">
             <div class="inverted field">
               <label>Amount</label>
               <input
-                style="color: white; background: #232b32"
+                style="color: white; background: #232b32; margin-top: 10px"
                 name="amount"
                 type="number"
-                placeholder="1000"
+                placeholder="100"
+                min="0"
+                max="1000"
               />
             </div>
             <div class="inverted field">
-              <label>Cycle</label>
+              <label>Min</label>
               <input
-                style="color: white; background: #232b32"
-                name="cycle"
+                style="color: white; background: #232b32; margin-top: 10px"
+                name="minValue"
                 type="number"
-                placeholder="1"
+                placeholder="000"
+                min="0"
+                max="999"
               />
             </div>
             <div class="inverted field">
-              <label>Unrepeatable</label>
-              <select
-                style="color: white; background: #232b32"
-                name="unrepeatable1"
-                class="inverted ui hugedropdown"
-              >
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
+              <label>Max</label>
+              <input
+                style="color: white; background: #232b32; margin-top: 10px"
+                name="maxValue"
+                type="number"
+                placeholder="1000"
+                min="0"
+                max="1000"
+              />
             </div>
           </div>
           <div class="inverted two fields">
             <div class="inverted field">
-              <label>Min 10♥️6♥️</label>
-              <input
-                style="color: white; background: #232b32"
-                name="minValue1"
-                type="number"
-                placeholder="000"
-              />
+              <label>Repeatable</label>
+              <select
+                style="color: white; background: #232b32; margin-top: 10px"
+                name="repeatable"
+                class="inverted ui hugedropdown"
+              >
+                <option value="false">No</option>
+                <option value="true">Yes</option>
+              </select>
             </div>
             <div class="inverted field">
-              <label>Max:</label>
-              <input
-                style="color: white; background: #232b32"
-                name="maxValue1"
-                type="number"
-                placeholder="1360"
-              />
+              <label>Sorted</label>
+              <select
+                style="color: white; background: #232b32; margin-top: 10px"
+                name="sorted"
+                class="inverted ui hugedropdown"
+              >
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+                <option value="2">Reverse</option>
+              </select>
             </div>
           </div>
-          <div class="inverted two fields"></div>
 
           <div class="inverted field">
-            <label>Slow numbers</label>
+            <label>Only slow numbers</label>
             <div class="inverted ui input focus">
               <input
-                style="color: white; background: #232b32"
+                style="color: white; background: #232b32; margin-top: 10px"
                 name="slownumbers"
                 type="text"
-                placeholder="00 01 02 03 04"
+                placeholder="write here numbers"
               />
             </div>
           </div>
           <div class="inverted field">
-            <label>AutoAdvance x100ms</label>
+            <label>AutoAdvance in 10ms</label>
             <div class="inverted ui input focus">
               <input
-                style="color: white; background-color: #232b32"
+                style="
+                  color: white;
+                  background-color: #232b32;
+                  margin-top: 10px;
+                "
                 name="autoAdvanced"
                 type="number"
                 placeholder="default off"
@@ -122,7 +158,12 @@
           </button>
         </div>
       </form>
-      <div></div>
+      <div>
+        <h2>
+          Talab va kamchiliklar bo'lsa github.com/onehanduz yoki t.me/onehand_1
+          ga murojaat qiling!
+        </h2>
+      </div>
     </div>
     <!-- NUMBERS -->
   </div>
@@ -148,9 +189,6 @@
     </div>
 
     <div>
-      <!-- <button class="ui yellow icon huge button memoHint" onclick="memoShow()">
-        <h2 style="font-size: 3em">show</h2>
-      </button> -->
       <button
         style="margin-inline-start: -2em"
         class="ui primary icon huge button memoReturn"
@@ -176,6 +214,13 @@
         <i style="font-size: 5.5em; padding-top: 37.5" class="play icon"></i>
       </button>
     </div>
+
+    <button class="ui danger icon huge button memoElo" onclick="memoElo()">
+      <i
+        style="font-size: 4em; padding-top: 25px"
+        class="horizontally undo play icon"
+      ></i>
+    </button>
   </div>
   <div id="numResult" style="display: none" class="inverted ui container">
     <font size="9">
@@ -197,12 +242,20 @@
       </div>
       <div style="display: flex; justify-content: center">
         <button
-          id="resultEnd"
+          id="copy"
           style="font-size: 0.7em; margin-top: 0.7em"
           class="inverted ui green icon button"
           onclick="copyElements()"
         >
           Copy slower than average
+        </button>
+        <button
+          id="copy"
+          style="font-size: 0.7em; margin-top: 0.7em"
+          class="inverted ui green icon button"
+          onclick="copyTime()"
+        >
+          Copy time
         </button>
       </div>
       <table class="inverted ui table">
@@ -216,8 +269,16 @@
             <td id="amountofres"></td>
           </tr>
           <tr>
-            <td>Spent:</td>
+            <td>All time:</td>
             <td id="timeofres"></td>
+          </tr>
+          <tr>
+            <td>Stop time:</td>
+            <td id="amountofrestime"></td>
+          </tr>
+          <tr>
+            <td>Spended:</td>
+            <td id="amountofrestimeer"></td>
           </tr>
           <tr>
             <td>Average:</td>
@@ -240,74 +301,7 @@
   <script src="./semantic/semantic.min.js"></script>
   <script src="numbers.js"></script>
   <script src="result.js"></script>
+  <script src="control.js"></script>
   <script src="app.js"></script>
-  <script>
-    document.onkeydown = function (evt) {
-      evt = evt || window.event;
-      if (memoNums.length !== 1 && resultarr == 0) {
-        if (evt.keyCode == 39) {
-          memoNext();
-        }
-        if (evt.keyCode == 37) {
-          memoPrev();
-        }
-        if (evt.keyCode == 32) {
-          memoReturn();
-        }
-      }
-    };
-
-    document
-      .getElementById("numSettings_form")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
-        document.getElementById("numSettings").style.display = "none";
-        document.getElementById("numMemo").style.display = "flex";
-        var numSettings = getData(e.target);
-        generateNums(numSettings);
-        memoNext();
-        start();
-        if (numSettings.autoAdvanced != false) {
-          interval = setInterval(
-            memoNext,
-            Number(numSettings.autoAdvanced) * 100
-          );
-        }
-      });
-    document.getElementById("memoEnd").addEventListener("click", function (e) {
-      e.preventDefault();
-      document.getElementById("numSettings").style.display = "none";
-      document.getElementById("numMemo").style.display = "none";
-      document.getElementById("numResult").style.display = "block";
-      pause();
-      endTime = Date.now();
-      resultTime[resultTime.length - 1].stop = Date.now();
-      resultarr = calculateResults(resultTime);
-      printHead(resultarr);
-      printResult(resultarr);
-      clearInterval(interval);
-    });
-    document
-      .getElementById("resultEnd")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        document.getElementById("numSettings").style.display = "block";
-        document.getElementById("numMemo").style.display = "none";
-        document.getElementById("numResult").style.display = "none";
-        resultTime = [];
-        memoNums = ["START"];
-        startTime = 0;
-        elapsedTime = 0;
-        endTime = 0;
-        counterClick = 0;
-        resultarr = 0;
-      });
-
-    document
-      .getElementById("resultSort")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        sortResults(resultarr);
-      });
-  </script>
+  <script src="event.js"></script>
 </body>
