@@ -1,28 +1,28 @@
 function imgGenenrator(img, p) {
   if (p == 1) {
     return (
-      '<img class="cardsMemo_e cardsMemoPos1Of2" src="cards/' +
+      '<img class="cardsMemo_e cardsMemoPos1Of2" src="./cards/' +
       img +
       '.svg" alt="card"></img>'
     );
   }
   if (p == 2) {
     return (
-      '<img class="cardsMemo_e cardsMemoPos2Of2" src="cards/' +
+      '<img class="cardsMemo_e cardsMemoPos2Of2" src="./cards/' +
       img +
       '.svg" alt="card"></img>'
     );
   }
   if (p == 3) {
     return (
-      '<img class="cardsMemo_e cardsMemoPos3Of2" src="cards/' +
+      '<img class="cardsMemo_e cardsMemoPos3Of2" src="./cards/' +
       img +
       '.svg" alt="card"></img>'
     );
   }
   if (p == 4) {
     return (
-      '<img class="cardsMemo_e cardsMemoPos4Of2" src="cards/' +
+      '<img class="cardsMemo_e cardsMemoPos4Of2" src="./cards/' +
       img +
       '.svg" alt="card"></img>'
     );
