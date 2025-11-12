@@ -75,7 +75,7 @@ function numbersUnrepeatable(objd) {
       for (let i = 0; i < elements.length; i++) {
         const element = elements[i];
         const element2 = elements2[i];
-        memoNums.push(digits[element] + " " + digits(element2));
+        memoNums.push(digits[element] + " " + digits[element2]);
       }
     } else if (objd.image == 3) {
       let elements = getRandomElements(objd);
@@ -87,7 +87,7 @@ function numbersUnrepeatable(objd) {
         const element2 = elements2[i];
         const element3 = elements3[i];
         memoNums.push(
-          digits[element] + " " + digits(element2) + " " + digits(element3)
+          digits[element] + " " + digits[element2] + " " + digits[element3]
         );
       }
     }
