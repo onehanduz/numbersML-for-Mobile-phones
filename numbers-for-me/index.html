@@ -122,14 +122,35 @@
           </div>
 
           <div class="inverted field">
-            <label>Only slow numbers</label>
-            <div class="inverted ui input focus">
-              <input
-                style="color: white; background: #232b32; margin-top: 10px"
-                name="slownumbers"
-                type="text"
-                placeholder="write here numbers"
-              />
+            <div class="inverted field">
+              <label>Only slow numbers</label>
+              <div class="inverted ui input focus">
+                <input
+                  id="slowimages"
+                  style="color: white; background: #232b32; margin-top: 10px"
+                  name="slownumbers"
+                  type="text"
+                  placeholder="write here numbers"
+                />
+              </div>
+              <div class="inverted field">
+                <button
+                  type="button"
+                  id="parseToSlow"
+                  style="font-size: 25px"
+                  class="ui huge button"
+                >
+                  Parse
+                </button>
+                <button
+                  type="button"
+                  id="clearSlow"
+                  style="font-size: 25px"
+                  class="ui huge button"
+                >
+                  Clear
+                </button>
+              </div>
             </div>
           </div>
           <div class="inverted field">
@@ -143,6 +164,8 @@
                 "
                 name="autoAdvanced"
                 type="number"
+                min="1"
+                max="10000"
                 placeholder="default off"
               />
             </div>
@@ -251,7 +274,7 @@
           Copy slower than average
         </button>
         <button
-          id="copy"
+          id="copyTime"
           style="font-size: 0.7em; margin-top: 0.7em"
           class="inverted ui green icon button"
           onclick="copyTime()"
